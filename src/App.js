@@ -8,6 +8,10 @@ const Button = ({ handleClick, text }) => {
   return <button onClick={handleClick}>{text}</button>
 }
 
+const Statistics = ({ text, calculation }) => {
+  return <p>{text}: {calculation} {text === 'Positive' ? '%' : ''}</p>
+}
+
 const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
@@ -20,9 +24,18 @@ const App = () => {
       <Button handleClick={() => setNeutral(neutral + 1)} text='neutral'/>
       <Button handleClick={() => setBad(bad + 1)} text='bad'/>
       <Header text='statistics' />
+<<<<<<< HEAD
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
+=======
+      <Statistics text='Good' calculation={good} />
+      <Statistics text='Neutral' calculation={neutral} />
+      <Statistics text='Bad' calculation={bad} />
+      <Statistics text='All' calculation={all} />
+      <Statistics text='Average' calculation={avg} />
+      <Statistics text='Positive' calculation={percent} />
+>>>>>>> dabb47a (Finish exercise 1.8)
     </div>
   )
 }
